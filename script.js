@@ -23,7 +23,7 @@ function calculateCarbs() {
     const tdee = bmr * activity;
 
     // คำนวณปริมาณคาร์บ (Carbohydrate) ที่แนะนำ (20% ของ TDEE / 4 แคลอรีต่อกรัม)
-    const carbs = (tdee * 0.2) / 4;
+    const carbs = (tdee * 0.2) / 60;
 
     // แสดงผลลัพธ์
     const resultDiv = document.getElementById("result");
