@@ -11,19 +11,19 @@ function calculateCarbs() {
         return;
     }
 
-    // คำนวณ BMR (Basal Metabolic Rate) ตามสูตร Harris & Benedict
+    // คำนวณ BMR
     let bmr;
     if (gender === "male") {
-        bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+        bmr = 66 + (13.7 * weight) + (5 * height) - (6.8 * age);
     } else {
-        bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+        bmr = 665 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
     }
 
     // คำนวณ TDEE (Total Daily Energy Expenditure)
     const tdee = bmr * activity;
 
-    // คำนวณปริมาณคาร์บ (Carbohydrate) ที่แนะนำ (50% ของ TDEE / 4 แคลอรีต่อกรัม)
-    const carbs = (tdee * 0.5) / 4;
+    // คำนวณปริมาณคาร์บ (Carbohydrate) ที่แนะนำ (20% ของ TDEE / 4 แคลอรีต่อกรัม)
+    const carbs = (tdee * 0.2) / 4;
 
     // แสดงผลลัพธ์
     const resultDiv = document.getElementById("result");
