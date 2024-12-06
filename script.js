@@ -5,7 +5,6 @@ function calculateCarbs() {
     const age = parseInt(document.getElementById("age").value);
     const gender = document.getElementById("gender").value;
     const activity = parseFloat(document.getElementById("activity").value);
-    const carbPercentage = document.getElementById('carbPercentage').value;
 
     if (!weight || !height || !age || !activity) {
         alert("กรุณากรอกข้อมูลให้ครบถ้วน!");
@@ -26,33 +25,7 @@ function calculateCarbs() {
     // คำนวณปริมาณคาร์บ (Carbohydrate) ที่แนะนำ (20% ของ TDEE / 4 แคลอรีต่อกรัม)
     const carbs = (tdee * 0.2) / 60;
 
-     // คำนวณปริมาณคาร์บ (Carbohydrate)
-    let carbGrams;
-    if (carbPercentage === "20") {
-        carbGrams = (tdee * 0.20) / 4 / 15;
-    } else if (carbPercentage === "40") {
-        carbGrams = (tdee * 0.40) / 4 / 15;
-    } else if (carbPercentage === "55") {
-        carbGrams = (tdee * 0.55) / 4 / 15;
-    }
-
-    return carbGrams.toFixed(2); // คืนค่าเป็นทศนิยม 2 ตำแหน่ง
-}
-
     // แสดงผลลัพธ์
-function handleCalculate() {
-    const tdee = parseFloat(document.getElementById('tdee').value); // รับค่า TDEE จากฟอร์ม
-    if (isNaN(tdee)) {
-        alert('กรุณากรอกค่า TDEE');
-        return;
-    }
-
-    const carbGrams = calculateCarbs(tdee);
-    document.getElementById('result').textContent = `ปริมาณคาร์บที่ต้องการ: ${carbGrams} หน่วย`;
-}
-
-
-
     const resultDiv = document.getElementById("result");
     resultDiv.innerHTML = `
         <p>ค่า BMR ของคุณ: ${bmr.toFixed(2)} แคลอรี</p>
